@@ -1,0 +1,27 @@
+<html>
+ <body>
+
+<form name="build" action="build.php" onsubmit="return execScript()" method="post">
+   <B> Enter Branch for core </B><br>
+       <input type="text" name="Core_branch" placeholder="Branch for core"  required autofocus /><br /><br>
+   <B> Enter Branch for plugins</B><br>
+      <input type="text" name="plug_branch" placeholder="Branch for plugins"  required  autofocus /><br /><br>
+    <B>Enter Tag for build</B><br>
+        <input type="text" name="Tag" placeholder="Tag for build" required  autofocus /><br /><br>
+    <B>Enter Password</B><br>
+       <input type="password" name= "password"   required autofocus /><br /><br> 
+     <B>Enter Email </B><br>
+     <input type="email" name= "email" required autofocus /><br /><br> 
+     <B> Upgrade Tesr server  </B> <br> 
+    <input type="radio" name="option" value="Yes" checked> Yes
+    <input type="radio" name="option" value="No"> No<br><br>
+   
+    <input type="submit" name ="submit"  value="Submit" />
+    <input type="reset" valu= "Reset"/>
+
+  
+
+  </form>
+ 
+ </body>
+</html>
