@@ -3,7 +3,7 @@ node
 {
   stage ('checkout')
    {
-        checkout SCM
+        checkout scm
         workspace_path = pwd()
    }
    stage ('static code analysis')
