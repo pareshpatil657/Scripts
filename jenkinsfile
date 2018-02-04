@@ -1,0 +1,46 @@
+def workspace_path;
+node
+{
+  stage ('checkout')
+   {
+        checkout SCM
+        workspace_path = pwd()
+   }
+   stage ('static code analysis')
+   {
+
+     build job: 'Sample-Static_code_analysis', parameters: [string(name: 'workspace_path', value: """${workspace_path}""")]
+
+   }
+   stage ('build')
+    {
+        sh """ echo workspace path is - ${workspace_path}
+          echo java path is - \${TOMCAT_HOME}"""
+
+    }
+    stage ('unit test')
+    {
+        echo "this is unit testing "
+    }
+    stage ('code coverage')
+    {
+         echo "this is code coverage"
+    }
+    stage ('create  package')
+    {
+        echo "create package"
+    }
+    stage ('Push package')
+    {
+         echo "Push package"
+    }
+    stage ('deploy')
+   {
+        echo "deploy package"
+   }
+   stage ('Log JIRA ticket')
+    {
+        echo "Log JIRA ticket"
+    }
+
+}
